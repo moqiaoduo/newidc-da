@@ -1,0 +1,19 @@
+{
+  "name": "newidc/directadmin",
+  "description": "NewIDC的DirectAdmin对接插件",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "41537",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "newidc/plugin": "^0.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "NewIDC\\DirectAdmin\\": "src/"
+    }
+  }
+}
