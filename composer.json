@@ -9,7 +9,7 @@
     }
   ],
   "require": {
-    "newidc/plugin": "^0.4"
+    "newidc/plugin": "^0.5"
   },
   "autoload": {
     "psr-4": {
