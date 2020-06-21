@@ -158,7 +158,7 @@ class Plugin extends Server
         return [
             'package' => ['type' => 'text', 'label' => '包名'],
             'reseller_ip' => ['type' => 'select', 'label' => '经销商IP',
-                'options' => arrayKeyValueSame(['', 'shared', 'sharedreseller', 'assign'])],
+                'options' => [arrayKeyValueSame(['', 'shared', 'sharedreseller', 'assign'])]],
             'dedicated_ip' => ['type' => 'switch', 'label' => '独立IP'],
         ];
     }
