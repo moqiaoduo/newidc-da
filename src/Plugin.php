@@ -36,7 +36,9 @@ class Plugin extends Server
             $ip = $this->product->server_configs['reseller_ip'];
             $action = '/CMD_ACCOUNT_RESELLER';
         } else {
-            $ip = $this->product->server_configs['dedicated_ip'] ? 'assign' : 'shared';
+            $ip = $this->product->server_configs['dedicated_ip'] ? 'assign' : (
+                $this->product->server_configs['server_ip'] ? 'server' : 'shared');
+
             $action = '/CMD_API_ACCOUNT_USER';
         }
 
@@ -156,10 +158,11 @@ class Plugin extends Server
     public static function productConfig()
     {
         return [
-            'package' => ['type' => 'text', 'label' => '包名'],
+            'package' => ['type' => 'text', 'label' => '包名', 'required' => null],
             'reseller_ip' => ['type' => 'select', 'label' => '经销商IP',
                 'options' => [arrayKeyValueSame(['', 'shared', 'sharedreseller', 'assign'])]],
             'dedicated_ip' => ['type' => 'switch', 'label' => '独立IP'],
+            'server_ip' => ['type' => 'switch', 'label' => '使用服务器IP'],
         ];
     }
 
