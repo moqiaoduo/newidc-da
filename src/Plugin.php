@@ -178,7 +178,7 @@ class Plugin extends Server
     {
         $protocol = $this->server->access_ssl ? 'https' : 'http';
         return <<<EOT
-<form method="post" action="$protocol://{$this->getHost()}:{$this->getPort()}/CMD_LOGIN" target="_blank">
+<form method="post" action="$protocol://{$this->getHost(false)}:{$this->getPort()}/CMD_LOGIN" target="_blank">
 <input type="hidden" name="username" value="{$this->service->username}">
 <input type="hidden" name="password" value="{$this->service->password}">
 <input type="submit" value="登录面板" class="btn btn-success">
@@ -190,7 +190,7 @@ EOT;
     {
         $protocol = $this->server->access_ssl ? 'https' : 'http';
         return <<<EOT
-<form method="post" action="$protocol://{$this->getHost()}:{$this->getPort()}/CMD_LOGIN" target="_blank">
+<form method="post" action="$protocol://{$this->getHost(false)}:{$this->getPort()}/CMD_LOGIN" target="_blank">
 <input type="hidden" name="username" value="{$this->server->username}">
 <input type="hidden" name="password" value="{$this->server->password}">
 <input type="submit" value="DirectAdmin" class="btn btn-success">
